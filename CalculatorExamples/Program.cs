@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,24 +11,22 @@ namespace CalculatorExamples
     {
         static void Main(string[] args)
         {
-            CalculadoraSuma c = new CalculadoraSuma();
-            double suma = c.Add(12.23, 11.3);
-            Console.WriteLine("La suma total es: {0}", suma);
-            Console.ReadLine();
+            CalculadoraSuma s = new CalculadoraSuma();
+            int sumaTotal = s.Suma(12, 5);
+            Console.WriteLine("La suma total es: {0}", sumaTotal); Console.ReadLine();
 
             CalculadoraResta r = new CalculadoraResta();
-            double resta = r.Res(12.4, 5);
-            Console.WriteLine("La resta es: {0}", resta); 
-            Console.ReadLine();
+            int restaTotal = r.Resta(20, 4);
+            Console.WriteLine("La resta es: {0}", restaTotal); Console.ReadLine(); 
         }
     }
     class CalculadoraSuma
     {
-        public double Add(double a, double b) { return a + b; }
+        public int Suma(int a, int b) { return a + b; }
     }
 
     class CalculadoraResta
     {
-        public double Res(double a, double b) { return a - b; }
+        public int Resta(int a, int b) { return a - b; }
     }
 }
